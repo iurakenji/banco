@@ -21,8 +21,11 @@
         </div>
     </div>
 </header>
-    <div class="container d-flex justify-content-center align-items-center vh100">
-    <form action="./controller/NvContaController.php" method="post" accept-charset="utf-8">
+    <div class="container d-flex justify-content-center align-items-center">
+       <h2 style="margin-top: 20px; margin-bottom: 20px;" > Insira os dados abaixo para confirmação de sua identidade: </h2>
+    </div>
+    <div class="container d-flex justify-content-center align-items-center vh70">
+    <form action="./controller/RecuperaController.php" method="post" accept-charset="utf-8">
                     <ul class="item-acesso">
                         <li class="text-left py-2">
                             <label for="">E-mail</label>
@@ -34,13 +37,40 @@
                         </li>
                         <li class="text-left py-2">
                             <label for="">Data de Nascimento</label>
-                            <input type="date" name="nascimento" class="input-text" required/>
+                            <input type="date" style="margin-bottom: 10px;" name="nascimento" class="input-text" required/>
                         </li>
+                        <button type="submit" style="margin-bottom: 10px;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Enviar</button>
                         <li><a href="index.php" class="link-esqueceu">Voltar</a></li>
                     </ul>
 </form>
+
+<?php
+    require_once "controller\RecuperaController.php";
+    ?>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+ 
+      <div class="modal-body">
+        <p>E-mail de recuperação enviado.</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
     </div>
     
-    <?php include "footer.php" ?>
+    <?php
+    
+    include "footer.php"
+
+    ?>
 </body>
+
 </html>

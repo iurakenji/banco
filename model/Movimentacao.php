@@ -56,6 +56,7 @@ class Mov extends Crud{
         $query = "SELECT * FROM movimentacao ";
         if($id != null){
             $query .= "WHERE conta_id = " . $id;
+            $query .= " ORDER BY data_movimentacao DESC";
         }
 
         $dbh = (new PdoHelper())->getConnection();
@@ -75,6 +76,7 @@ class Mov extends Crud{
                 $query .= " AND data_movimentacao BETWEEN '" . $inicio . "' AND ADDDATE('" . $fim . "',1)";
                 //print_r($query);
             }
+            $query .= " ORDER BY data_movimentacao DESC";
         }
 
         $dbh = (new PdoHelper())->getConnection();
