@@ -5,7 +5,7 @@ require_once './controller/ValidAuth.php';
 ?>
 <?php 
 $dir = getcwd();
-require_once $dir . '/controller/MovController.php' ?>
+require_once $dir . '/controller/SaqueController.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
