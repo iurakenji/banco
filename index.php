@@ -33,6 +33,8 @@
                         </li>
                         <li class="text-center">
                             <a href="novaconta.php" class="link link-cadastro">Ainda não sou cadastrado.</a>
+                            <?php
+    ?>
                         </li>
                     </ul>
                 </form>

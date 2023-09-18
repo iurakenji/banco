@@ -13,7 +13,7 @@ if($_POST){
 
     //Depósito
     if (isset($_POST["valordeposito"])){
-    $acao="Depósito";
+    $acao=2;
     $transok=true;
     $valor = $_POST["valordeposito"];
     $novoSaldo = $dadosConta['saldo'] + $valor;

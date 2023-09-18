@@ -17,7 +17,7 @@ if($_POST){
  
             if ($valor <= $dadosConta['saldo']){
                 $novoSaldo = $dadosConta['saldo'] + $valor;
-                $acao="Saque";
+                $acao=1;
                 $transok=true;
                 } else {
                     $novoSaldo = $dadosConta['saldo'];

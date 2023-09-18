@@ -12,15 +12,6 @@ if($_POST){
     $dadosConta = $conta->getContaByPessoa($idPessoa);
     $valor = $_POST["valortransf"];
 
-    //Depósito
-        if ($valor <= $dadosConta['saldo']){
-                $novoSaldo = $dadosConta['saldo'] + $valor;
-                $acao="Saque";
-                $transok=true;
-                } else {
-                    $novoSaldo = $dadosConta['saldo'];
-                    echo "<script>alert('Saldo insuficiente para saque.');</script>";
-                }
             //Transferência
             if (isset($_POST["valortransf"])){
                 $valor = $_POST["valortransf"] * -1;
@@ -33,7 +24,6 @@ if($_POST){
                     
                     if (($valor * -1) <= $dadosConta['saldo']){
                         $novoSaldo = $dadosConta['saldo'] + $valor;
-                        $acao="Transferência";
                         $transok=true;
                         
                         } else {
@@ -56,7 +46,7 @@ if($_POST){
         ]);
 
         $mov->insert([
-            "acao" => $acao,
+            "acao" => 3,
             "valor" => $valor,
             "data_movimentacao" => $data,
             "conta_id" => $dadosConta['id']
@@ -64,7 +54,7 @@ if($_POST){
     ]);
 
         $mov->insert([
-            "acao" => $acao,
+            "acao" => 4,
             "valor" => $valor * -1,
             "data_movimentacao" => $data,
             "conta_id" => $dDestino["id"]

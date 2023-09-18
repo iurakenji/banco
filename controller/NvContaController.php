@@ -30,7 +30,8 @@ if($_POST){
             "email" => $email,
             "cpf" => $cpf,
             "nascimento" => $nascimento,
-            "senha" => $senha
+            "senha" => $senha,
+            "imagem" => "img/anon.png"
         ]);
         $pessoa -> getPessoaByEmail($email);
         $conta = new Conta();
@@ -38,7 +39,7 @@ if($_POST){
             "agencia" => "1234",
             "contacorrente" => rand(1000,9999),
             "saldo" => 0,
-            "pessoa_id" => $id
+            "pessoa_id" => $id,
         ]);
     echo '<script> alert("Conta Criada com sucesso. Entre com os dados informados na tela de login."); </script>';
     echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL= ../index.php'>";
