@@ -53,7 +53,7 @@ class Mov extends Crud{
     }
 
     function getMov($id = null){
-        $query = "SELECT * FROM movimentacao ";
+        $query = "SELECT movimentacao.id, acao, valor, data_movimentacao, conta_id, transacao.id, transacao.nome FROM movimentacao INNER JOIN transacao ON transacao.id = movimentacao.acao ";
         if($id != null){
             $query .= "WHERE conta_id = " . $id;
             $query .= " ORDER BY data_movimentacao DESC";
@@ -69,7 +69,7 @@ class Mov extends Crud{
 
     function getMovPeriodo($id = null, $inicio = null, $fim = null){
 
-        $query = "SELECT * FROM movimentacao";
+        $query = "SELECT movimentacao.id, acao, valor, data_movimentacao, conta_id, transacao.id, transacao.nome FROM movimentacao INNER JOIN transacao ON transacao.id = movimentacao.acao ";
         if($id != null){
             $query .= " WHERE conta_id = " . $id;
             if ($inicio != null & $fim != null){

@@ -16,7 +16,7 @@ require_once $dir . '/model/Movimentacao.php';
         for ($row = 0; $row < count($result); $row++) {
 
                 echo "<tr>";  
-                echo "<th scope='row' style='width: 40%; text-align: center;'>" . $result[$row]['acao'] . "</th>"; 
+                echo "<th scope='row' style='width: 40%; text-align: center;'>" . $result[$row]['nome'] . "</th>"; 
                 $fdata = date_create($result[$row]["data_movimentacao"]);         
                 echo "<td scope='row' style='width: 30%; text-align: center;'>" . date_format($fdata,"d-m-Y H:i") . "</td>";
                 if (number_format($result[$row]["valor"] > 0)) {

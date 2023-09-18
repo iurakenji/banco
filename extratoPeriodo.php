@@ -7,8 +7,6 @@ $dir = getcwd();
 if($_POST){
     $inicio = $_POST["inicio"];
     $fim = $_POST["fim"];
-    echo $inicio;
-    echo $fim;
 } else {
     $inicio = '1990-01-01';
     $fim = date("Y-m-d");
